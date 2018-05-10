@@ -12,6 +12,13 @@ module.exports = { // expose something to another file
             loader: 'babel-loader',
             test: /\.js$/,
             exclude: /node_modules/
+        },{
+            test: /\.s?css$/,
+            use: [ // use allows us to declare an array of loaders
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
         }]
     },
     devtool: 'cheap-module-eval-source-map', // helps with debugging, highlights source file
